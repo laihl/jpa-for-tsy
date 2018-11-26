@@ -18,8 +18,8 @@ import java.util.Map;
 @SpringBootTest
 public class JpaForTsyApplicationTests {
 
-    @Autowired
-    public UserDao userDao;
+//    @Autowired
+//    public UserDao userDao;
 
     @Test
     public void test(){
@@ -28,9 +28,7 @@ public class JpaForTsyApplicationTests {
 
         user.setName("1");
 
-        User save = userDao.save(user);
-
-        System.out.println(save.getUserId());
+        System.out.println(user);
 
 
     }

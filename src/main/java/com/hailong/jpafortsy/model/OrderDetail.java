@@ -2,18 +2,13 @@ package com.hailong.jpafortsy.model;
 
 import lombok.Data;
 
-import javax.persistence.*;
 
-@Entity
-@Table(name="t_orderDetail")
 @Data
 public class OrderDetail {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int OrderDetail_id;
-    private int order_id;
-    private int product_id;
-    private String         product_name;
+    private int OrderDetailId;
+    private int orderId;
+    private int productId;
+    private String         productName;
     private int quantity;
     private double price;
     private double danjia;
@@ -22,7 +17,7 @@ public class OrderDetail {
     private String danweiupname;
     private int danweiupjishu;
     private double xiaoji;
-    private boolean jiliang;
+    private String jiliang;
     private double      fandian;
 
 }
