@@ -4,15 +4,15 @@ spring:
     username: root
     password: 1234
     driver-class-name: com.mysql.jdbc.Driver
-  jpa:
-    database: mysql
-    show-sql: true
-    hibernate:
-      ddl-auto: create
   redis:
     host: 192.168.99.100
     port: 6379
+    database: 1
+
 #debug: true
+#  日志级别从低到高分为TRACE < DEBUG < INFO < WARN < ERROR < FATAL，如果设置为WARN，则低于WARN的信息都不会输出。
+#  logging.level.com.dudu=DEBUG：com.dudu包下所有class以DEBUG级别输出
+#  logging.level.root=WARN：root日志以WARN级别输出
 logging:
   file: ./log/default.log
   ##test test11

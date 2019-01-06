@@ -13,9 +13,6 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserApi  {
 
-//    @Autowired
-//    private UserDao userDao;
-
     @ApiOperation(value="用户列表", notes="用户列表")
     @RequestMapping(value={""}, method= RequestMethod.GET)
     public List<User> getUsers() {
