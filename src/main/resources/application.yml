@@ -11,8 +11,7 @@ spring:
       ddl-auto: create
   redis:
     host: 192.168.99.100
-    port: 32768
-    password:
+    port: 6379
 #debug: true
 logging:
   file: ./log/default.log
