@@ -1,14 +1,19 @@
 spring:
   datasource:
-    url: jdbc:mysql://192.168.99.100:32779/tsy_cms?useSSL=false&serverTimezone=UTC
-    username: hailong
-    password: hailong
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.99.100:3306/test
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.jdbc.Driver
   jpa:
     database: mysql
     show-sql: true
     hibernate:
       ddl-auto: create
-debug: true
-
-##test test11
+  redis:
+    host: 192.168.99.100
+    port: 32768
+    password:
+#debug: true
+logging:
+  file: ./log/default.log
+  ##test test11
