@@ -1,4 +1,4 @@
-package com.hailong.jpafortsy.model;
+package com.hailong.jpafortsy.dbmodel;
 
 import lombok.Data;
 

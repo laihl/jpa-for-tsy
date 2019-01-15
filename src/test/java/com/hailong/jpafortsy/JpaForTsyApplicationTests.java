@@ -1,6 +1,6 @@
 package com.hailong.jpafortsy;
 
-import com.hailong.jpafortsy.model.User;
+import com.hailong.jpafortsy.dbmodel.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

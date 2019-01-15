@@ -21,7 +21,7 @@ create table t_user(
 drop table if exists t_user_ext;
 create table t_user_ext(
   ext_id int auto_increment primary key ,
-  reward float(1,3) default 0.0,
+  reward float(3,3) default 0.0,
   mission int default 0
 );
 

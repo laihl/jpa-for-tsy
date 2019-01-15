@@ -14,7 +14,7 @@ public class JpaForTsyApplication {
         ApplicationContext context = SpringApplication.run(JpaForTsyApplication.class, args);
         String[] names = context.getBeanDefinitionNames();
         for (String name : names) {
-            System.out.println(name);
+//            System.out.println(name);
 //            log.info(name);
         }
 /**
