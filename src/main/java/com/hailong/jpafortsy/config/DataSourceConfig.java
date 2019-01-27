@@ -12,16 +12,16 @@ import java.beans.PropertyVetoException;
 @Configuration
 public class DataSourceConfig {
 
-    @Value("${spring.datasource.driver-class-name}")
+    @Value("${db.mysql.driver-class-name}")
     private String driverclass;
-    @Value("${spring.datasource.username}")
+    @Value("${db.mysql.username}")
     private String username;
-    @Value("${spring.datasource.password}")
+    @Value("${db.mysql.password}")
     private String pwd;
-    @Value("${spring.datasource.url}")
+    @Value("${db.mysql.url}")
     private String url;
 
-    @Bean
+    @Bean("datasource")
     public DataSource dataSource() throws PropertyVetoException {
         ComboPooledDataSource comboPooledDataSource = new ComboPooledDataSource();
         comboPooledDataSource.setJdbcUrl(url);

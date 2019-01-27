@@ -1,9 +1,4 @@
 spring:
-  datasource:
-    url: jdbc:mysql://192.168.99.100:3306/tmemp?useSSL=false
-    username: root
-    password: 1234
-    driver-class-name: com.mysql.jdbc.Driver
   redis:
     host: 192.168.99.100
     port: 6379
@@ -23,3 +18,12 @@ spring:
 logging:
   file: ./log/default.log
   ##test test11
+mybatis:
+  mapper-locations: /mybatis/*.xml
+
+db:
+  mysql:
+    url: jdbc:mysql://192.168.99.100:3306/tmemp?useSSL=false
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.jdbc.Driver
