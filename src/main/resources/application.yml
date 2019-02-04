@@ -23,7 +23,7 @@ mybatis:
 
 db:
   mysql:
-    url: jdbc:mysql://192.168.99.100:3306/tmemp?useSSL=false
+    url: jdbc:mysql://192.168.99.100:3306/temp?useSSL=false
     username: root
     password: 1234
     driver-class-name: com.mysql.jdbc.Driver

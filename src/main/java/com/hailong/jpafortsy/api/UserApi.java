@@ -18,7 +18,7 @@ public class UserApi  {
     public List<User> getUsers(String t) {
         List<User> users = new ArrayList<>();
         User e = new User();
-        e.setName(t);
+        e.setUserName(t);
         users.add(e);
         return users;
     }

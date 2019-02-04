@@ -12,11 +12,8 @@ public class Address {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long addressId;
-    @Column
-    private Integer userId;
-    @Column
+    private Long userId;
     private String address;
-    @Column
     private Double jiliang;
 
 }

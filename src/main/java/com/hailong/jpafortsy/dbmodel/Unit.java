@@ -2,12 +2,21 @@ package com.hailong.jpafortsy.dbmodel;
 
 import lombok.Data;
 
+import javax.persistence.*;
+
 
 @Data
+//@Entity(name = "t_unit")
 public class Unit {
-    private int id;
-    private int base;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    @Column
+    private Long base;
+    @Column
     private String baseName;
-    private int fatherId ;
-    private double price;
+    @Column
+    private Long fatherId ;
+    @Column
+    private Double price;
 }

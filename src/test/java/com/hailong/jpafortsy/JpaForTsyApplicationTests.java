@@ -21,7 +21,7 @@ public class JpaForTsyApplicationTests {
 
         User user = new User();
 
-        user.setName("1");
+        user.setUserName("1");
 
         System.out.println(user);
 

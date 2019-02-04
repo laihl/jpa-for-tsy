@@ -2,15 +2,26 @@ package com.hailong.jpafortsy.dbmodel;
 
 import lombok.Data;
 
+import javax.persistence.*;
+
 
 @Data
+//@Entity(name = "t_product")
 public class Product {
-    private int productId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long productId;
+    @Column
     private String productName;
-    private String fandian;
-    private String jiliang;
-    private int product_classifyId;
-    private int left;
-    private int unitId;
+    @Column
+    private Double fandian;
+    @Column
+    private Double jiliang;
+    @Column
+    private Long product_classifyId;
+    @Column
+    private Long left;
+    @Column
+    private Long unitId;
 
 }

@@ -18,9 +18,11 @@ public class News {
     @Column
     private String context;
     @Column
-    private String author;
+    private Long authorUser;
     @Column
     private String good;
     @Column
     private String top;
+    @Column
+    private String type;
 }
