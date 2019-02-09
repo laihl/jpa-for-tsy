@@ -10,8 +10,8 @@ import javax.persistence.*;
 public class DataLib {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private Long fatherId;
+    private Integer id;
+    private Integer fatherId;
     private String strId;
     private String description;
     private String value;

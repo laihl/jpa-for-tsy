@@ -11,8 +11,8 @@ public class Address {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long addressId;
-    private Long userId;
+    private Integer addressId;
+    private Integer userId;
     private String address;
     private Double jiliang;
 

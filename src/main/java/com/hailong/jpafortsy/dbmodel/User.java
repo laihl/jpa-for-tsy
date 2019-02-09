@@ -7,25 +7,20 @@ import java.util.List;
 
 
 @Data
-//@Entity(name = "t_user")
+@Entity(name = "t_user")
 public class User {
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
-        private Long userId;
-        @Column
+        private Integer userId;
+        @Column(insertable = false,updatable = false)
         private String userName;
-        @Column
         private String regDate;
-        @Column
         private String loginId ;
-        @Column
         private String userAuth;
-        @Column
         private String UserName;
-        @Column
         private String sex;
-        @Column
         private Double fandian;
+        @Transient
         private List<Address> addressList;
 
 }

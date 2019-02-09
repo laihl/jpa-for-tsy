@@ -6,22 +6,16 @@ import javax.persistence.*;
 
 
 @Data
-//@Entity(name = "t_product")
+@Entity(name = "t_product")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long productId;
-    @Column
+    private Integer productId;
     private String productName;
-    @Column
     private Double fandian;
-    @Column
     private Double jiliang;
-    @Column
-    private Long product_classifyId;
-    @Column
-    private Long left;
-    @Column
-    private Long unitId;
+    private Integer product_classifyId;
+    private Integer productLeft;
+    private Integer unitId;
 
 }

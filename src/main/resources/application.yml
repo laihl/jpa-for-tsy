@@ -5,12 +5,13 @@ spring:
     database: 1
   jpa:
     hibernate:
-      ddl-auto: create #自动更新
+      ddl-auto: update #自动更新
     show-sql: true  #日志中显示sql语句
     properties:
       hibernate:
         temp:
           use_jdbc_metadata_defaults: false
+
 #debug: true
 #  日志级别从低到高分为TRACE < DEBUG < INFO < WARN < ERROR < FATAL，如果设置为WARN，则低于WARN的信息都不会输出。
 #  logging.level.com.dudu=DEBUG：com.dudu包下所有class以DEBUG级别输出

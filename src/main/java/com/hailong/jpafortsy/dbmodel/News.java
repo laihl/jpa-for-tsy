@@ -10,19 +10,12 @@ import javax.persistence.*;
 public class News {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @Column
+    private Integer id;
     private String title;
-    @Column
     private String regDate;
-    @Column
     private String context;
-    @Column
-    private Long authorUser;
-    @Column
+    private Integer authorUser;
     private String good;
-    @Column
     private String top;
-    @Column
     private String type;
 }

@@ -8,12 +8,13 @@ import javax.persistence.*;
 import java.util.List;
 
 @Data
-//@Entity(name = "t_product_classify")
+@Entity(name = "t_product_classify")
 public class ProductClassify {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long productClassifyId;
-    private Long fatherId;
+    private Integer productClassifyId;
+    private Integer fatherId;
     private String name;
+    @Transient
     private List<Product> productList;
 }

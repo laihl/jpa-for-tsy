@@ -6,17 +6,13 @@ import javax.persistence.*;
 
 
 @Data
-//@Entity(name = "t_unit")
+@Entity(name = "t_unit")
 public class Unit {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    @Column
-    private Long base;
-    @Column
+    private Integer id;
+    private Integer base;
     private String baseName;
-    @Column
-    private Long fatherId ;
-    @Column
+    private Integer fatherId ;
     private Double price;
 }
