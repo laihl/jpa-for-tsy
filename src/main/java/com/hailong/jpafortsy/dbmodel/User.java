@@ -10,15 +10,20 @@ import java.util.List;
 @Entity(name = "t_user")
 public class User {
         @Id
-        @GeneratedValue(strategy = GenerationType.AUTO)
         private Integer userId;
-        @Column(insertable = false,updatable = false)
+        @Column
         private String userName;
+        @Column
         private String regDate;
+        @Column
         private String loginId ;
+        @Column
         private String userAuth;
+        @Column
         private String UserName;
+        @Column
         private String sex;
+        @Column
         private Double fandian;
         @Transient
         private List<Address> addressList;

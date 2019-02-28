@@ -12,6 +12,7 @@ public class Address {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer addressId;
+    @Column(name="asdjkhaksdjklas")
     private Integer userId;
     private String address;
     private Double jiliang;

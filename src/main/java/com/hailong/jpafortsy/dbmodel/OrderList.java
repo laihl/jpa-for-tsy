@@ -12,7 +12,7 @@ import java.util.List;
 public class OrderList {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer orderId;
     private Date regIate;
     private String odernumber;

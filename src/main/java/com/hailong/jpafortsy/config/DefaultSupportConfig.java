@@ -22,6 +22,8 @@ public class DefaultSupportConfig extends WebMvcConfigurationSupport {
                 .addResourceLocations("classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**")
                 .addResourceLocations("classpath:/META-INF/resources/webjars/");
+        registry.addResourceHandler("/*")
+                .addResourceLocations("classpath:/web/");
         super.addResourceHandlers(registry);
     }
 

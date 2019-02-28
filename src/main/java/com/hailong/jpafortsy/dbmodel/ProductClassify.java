@@ -11,7 +11,7 @@ import java.util.List;
 @Entity(name = "t_product_classify")
 public class ProductClassify {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer productClassifyId;
     private Integer fatherId;
     private String name;

@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Entity(name = "t_unit")
 public class Unit {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Integer base;
     private String baseName;

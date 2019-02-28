@@ -1,8 +1,11 @@
 package com.hailong.jpafortsy;
 
+import com.hailong.jpafortsy.dao.UserDao;
+import com.hailong.jpafortsy.dao.UserDaoTemplat;
 import com.hailong.jpafortsy.dbmodel.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -13,18 +16,18 @@ import java.util.Map;
 @SpringBootTest
 public class JpaForTsyApplicationTests {
 
-//    @Autowired
-//    public UserDao userDao;
+    @Autowired
+    public UserDaoTemplat userDaoTemplat;
+
+    @Autowired
+    public UserDao userDao;
 
     @Test
     public void test(){
-
         User user = new User();
-
-        user.setUserName("1");
-
+        user.setUserName("test");
+        userDaoTemplat.addUser(user);
         System.out.println(user);
-
 
     }
 

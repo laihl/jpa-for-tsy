@@ -1,9 +1,17 @@
 package com.hailong.jpafortsy.config;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
-import org.springframework.beans.factory.annotation.Value;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import javax.sql.DataSource;
 import java.beans.PropertyVetoException;
@@ -12,28 +20,21 @@ import java.beans.PropertyVetoException;
 @Configuration
 public class DataSourceConfig {
 
-    @Value("${db.mysql.driver-class-name}")
-    private String driverclass;
-    @Value("${db.mysql.username}")
-    private String username;
-    @Value("${db.mysql.password}")
-    private String pwd;
-    @Value("${db.mysql.url}")
-    private String url;
+//    @Bean
+//    @ConfigurationProperties(prefix = "db.mysql")
+//    public DataSource dataSource() throws PropertyVetoException {
+//        return DataSourceBuilder.create().type(ComboPooledDataSource.class).build();
+//    }
 
-    @Bean("datasource")
-    public DataSource dataSource() throws PropertyVetoException {
-        ComboPooledDataSource comboPooledDataSource = new ComboPooledDataSource();
-        comboPooledDataSource.setJdbcUrl(url);
-        comboPooledDataSource.setDriverClass(driverclass);
-        comboPooledDataSource.setUser(username);
-        comboPooledDataSource.setPassword(pwd);
-        comboPooledDataSource.setInitialPoolSize(2);//初始化池大小
-        comboPooledDataSource.setMaxStatements(50);//每次最多可以执行多少个批处理语句
-        comboPooledDataSource.setMaxPoolSize(10);//最多有多少个连接
-        comboPooledDataSource.setMinPoolSize(2);//最少几个连接
-        comboPooledDataSource.setAcquireIncrement(5);//如果池中数据连接不够时一次增长多少个
-        comboPooledDataSource.setMaxIdleTime(30);//最大空闲时间
-        return comboPooledDataSource;
+    @Bean
+    public DataSourceTransactionManager dataSourceTransactionManager(DataSource dataSource){
+        return new DataSourceTransactionManager(dataSource);
     }
+
+    @Bean
+    public JdbcTemplate jdbcTemplate(DataSource dataSource){
+        return new JdbcTemplate(dataSource);
+    }
+
+
 }

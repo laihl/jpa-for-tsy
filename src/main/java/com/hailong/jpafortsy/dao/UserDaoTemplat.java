@@ -7,7 +7,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 @Repository
-public interface UserDao  {
+public class UserDaoTemplat extends DbBase {
     @Transactional
-    public void addUser(User user) ;
+    public void addUser(User user) {
+        insert(user);
+        if (false){
+            throw new RuntimeException("test Transaction");
+        }
+    }
 }
