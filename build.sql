@@ -1,4 +1,4 @@
-create schema if not exists temp collate latin1_swedish_ci;
+create schema if not exists temp collate utf8_general_ci;
 use temp;
 create table if not exists t_address
 (

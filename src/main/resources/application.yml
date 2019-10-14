@@ -3,9 +3,9 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: 1234
-    url: jdbc:mysql://192.168.99.100:3306/temp?useSSL=false
+    url: jdbc:mysql://localhost:3306/temp?useSSL=false&characterEncoding=utf8
   redis:
-    host: 192.168.99.100
+    host: localhost
     port: 6379
     database: 1
   jpa:

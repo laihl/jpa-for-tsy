@@ -34,6 +34,7 @@ import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.*;
 
 @Transactional
@@ -65,16 +66,8 @@ public class DbBase implements Dao{
         return sqlSessionFactory.getConfiguration();
     }
 
-    @Transactional
-    public <T> void insert(T t) {
-        try {
-            transTemplate.execute(new TransactionCallback<Object>() {
-                @Override
-                public Object doInTransaction(TransactionStatus status) {
-
-                    return null;
-                }
-            });
+    @Transactional(rollbackFor =  Exception.class)
+    public <T> void insert(T t) throws IllegalAccessException, SQLException {
 
             SqlInfo sqlInfo = DbUtils.getInsertSql(t);
 
@@ -88,19 +81,12 @@ public class DbBase implements Dao{
 
             Executor executor = getConfiguration().newExecutor(transaction);
 
-            System.out.println(sql);
-            System.out.println(t);
+            System.out.println("【执行的 SQL】：" + sql);
+            System.out.println("【传入的对象】：" + t);
 
             int update = executor.update(mapped, t);
 
-
-
             System.out.println(update);
-
-        } catch (Throwable e) {
-            e.printStackTrace(System.err);
-            throw new RuntimeException(e);
-        }
     }
 
     private MappedStatement getInserMappedStatment(SqlInfo sqlInfo) {
